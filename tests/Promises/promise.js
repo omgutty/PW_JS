@@ -34,3 +34,4 @@ console.log(prm4); // if we are not calling prm4 alos it will execute
 prm4
 .then((p)=>console.log(p))
 .catch((f)=>console.log(f))
+.finally()

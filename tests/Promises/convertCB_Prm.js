@@ -81,4 +81,5 @@ connecttoDB()
     })
     .catch((err) => {
       console.log("Error: ", err);
-     });
+     })
+     .finally(()=>{console.log("--End of the program--")});
