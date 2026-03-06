@@ -39,14 +39,3 @@ console.log("After");
  * after 2 conds
  * end  
  * /
-
-
-
-
-
-
-
-
-
-
-        
