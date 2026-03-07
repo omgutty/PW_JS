@@ -13,7 +13,7 @@ async function getuserdetails(){
 }
 
 //calling the function with await and storing in variable 
-let result = await getuserdetails();
+let result =  await getuserdetails();
 console.log(result);
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -27,7 +27,7 @@ async function getobject() {
    })
 }
 
-let result2=await getobject();
+let result2= await getobject();
 console.log(result2.id);
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -45,6 +45,6 @@ async function arrayofobject(){
     })
 }
 
-let result3=await arrayofobject();
+let result3= await arrayofobject();
 console.log(result3);
 //console.log(result3[1]);
