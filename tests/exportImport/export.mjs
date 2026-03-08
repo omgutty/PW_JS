@@ -1,12 +1,12 @@
 
 
-export let name= "om";
-export let age= 35;
+ let name= "om";
+ let age= 35;
 
-export function add (a,b){
-    console.log(a+b);
+ function add(a,b){
+ 
     return a+b;
 }
 
-
+export { name, age, add };
 
