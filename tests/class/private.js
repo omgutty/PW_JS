@@ -34,6 +34,10 @@ class pvt{
 
 }
 
-let obj= new pvt(10,20);
-obj.method2();
-pvt.method1();
+// let obj= new pvt(10,20);
+// obj.method2();
+// pvt.method1();
+
+//exporting above class 
+
+export{pvt}
