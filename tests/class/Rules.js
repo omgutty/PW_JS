@@ -42,6 +42,13 @@ class product3{
 }
 
 let obj3 = new product3(30); 
+let obj4 = new product3(30); 
+if(obj3==obj4){
+    console.log("Pass")
+}
+else{
+    console.log("fail")
+}
 console.log(obj3.price); //30
 
 
