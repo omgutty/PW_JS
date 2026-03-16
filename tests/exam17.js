@@ -137,7 +137,6 @@ console.log(MathUtils.add(5,6));
 
 /**
  * 6️⃣ Static Property
-
 Create a class Company with a static property companyName = "Tech Corp"
 Print it using the class.
  */
@@ -148,14 +147,165 @@ class Company{
 
 console.log(Company.companyName);
 
-//////////////////////////////////////
+/////////////////////////////////////
 /**
+ * 
  * 7️⃣ Private Field
-
+ * 
 Create a class BankAccount with a private field #balance.
 Add methods deposit() and getBalance().
-
 Example:
-
 Balance: 5000
  */
+
+class BankAccount{
+    #balance;
+    deposit(balance){
+        this.#balance=balance;
+    }
+    getBalance(){
+        console.log("Balance :"+this.#balance);
+    }
+}
+const obj8= new BankAccount();
+obj8.deposit(500);
+obj8.getBalance();
+
+////////////////////////////////
+/**
+ * 8️⃣ Private Method
+Create a class User with a private method #generatePassword()
+Call it inside a public method createAccount().
+ */
+
+class User2{
+    #generatePassword(){
+        console.log("generate password");
+    }
+    createAccount(){
+       this.#generatePassword();
+    }
+}
+const obj9= new User2();
+obj9.createAccount();
+///////////////////////////////////////
+/**
+ * 9️⃣ Simple Inheritance
+Create a class Animal with method sound().
+Create a class Dog that extends Animal.
+Call the method from the child class.
+Output:
+Animal makes sound
+ */
+
+class Animal {
+    sound(){
+        console.log("Animal makes sound");
+    }
+}
+class Dog extends Animal{
+    dogsound(){
+        super.sound();
+    }
+}
+let obj10= new Dog();
+obj10.dogsound();
+
+/////////////////////////////////////////
+/**
+ * 🔟 Constructor Inheritance
+Create a class Person with constructor (name).
+Create a class Teacher that extends Person and prints teacher name.
+ */
+
+class Person4{
+    constructor (name){
+        this.name=name;
+    }
+}
+
+class Teacher extends Person4{
+     constructor(name) {
+        super(name); // passes name to Person's constructor
+    }
+
+    teachername() {
+        console.log("Teacher Name: " + this.name);
+    }
+}
+
+const obj11 = new Teacher("Mohan");
+obj11.teachername();
+
+//////////////////////////////////
+
+/**
+ * 1️⃣1️⃣ Method Overriding
+Create class Vehicle with method start().
+Create class Bike that overrides start().
+Output:
+Bike started
+ */
+
+class Vehicle2{
+    start(){
+        console.log("vehicle2 start method ");
+    }
+}
+class Bike extends Vehicle2 {
+      start(){
+        console.log("Bike started ");
+    }
+ }
+let obj12= new Bike();
+obj12.start();
+
+
+/////////////////////////////////////////////
+/**
+ * 1️⃣2️⃣ super Keyword
+Create a class Shape with method draw().
+Create class Circle that calls the parent method using super.draw().
+ */
+
+class Shape{
+
+    draw(){
+        console.log("draw mehthod from shape class ")
+    }
+}
+
+class Circl extends Shape{
+    drawmethod(){
+        super.draw();
+    }
+}
+
+const obj13= new Circl();
+obj13.drawmethod();
+
+////////////////////////////////////////////////
+/**
+ * 1️⃣3️⃣ Static Counter
+Create a class Counter with static variable count.
+Increase count every time an object is created.
+Example Output:
+Total objects: 3
+ */
+
+class Counter{
+    static count;
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
