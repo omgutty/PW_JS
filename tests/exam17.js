@@ -294,15 +294,103 @@ Total objects: 3
  */
 
 class Counter{
-    static count;
-    
+    static count=0;
+
+    constructor(){
+        Counter.count++;
+    }
+}
+
+const obj14 = new Counter();
+const obj15 = new Counter();
+const obj16= new Counter();
+
+console.log("Total objects:", Counter.count);
+
+////////////////////////////////////
+
+/**
+ * 1️⃣4️⃣ Encapsulation Example
+Create a class Product with private price #price.
+Add methods:
+setPrice() getPrice()
+ */
+
+class Product2{
+    #price;
+
+    setprice(p){
+        this.#price=p;
+    }
+    getprice(){
+        console.log("get price : "+this.#price)
+    }
+}
+
+const obj17= new Product2();
+obj17.setprice(500);
+
+obj17.getprice();
+
+///////////////////////////////////
+
+/**
+ * 1️⃣5️⃣ Mini Project
+Create a class Library that stores book names in an array.
+Methods:
+addBook(bookName) removeBook(bookName) displayBooks()
+Example Output:
+Books:
+JavaScript
+Python
+Java
+ */
+
+class Library{
+   // Constructor initializes an empty array for books
+    constructor() {
+        this.books = [];
+    }
+
+
+    addBook(bookName){
+        this.books.push(bookName);
+        console.log(`Book "${bookName}" added to the library.`);
+    }
+
+    removeBook(bookName){
+       const indexofbook= this.books.indexOf(bookName);
+        
+       //If the book is not found, indexOf returns -1.
+
+       if (indexofbook !== -1){
+
+        // if found, we go to that index and remove one record using splice
+        this.books.splice(indexofbook,1);
+        console.log(`Book "${bookName}" removed from the library.`);
+       }else{
+            console.log(`Book "${bookName}" not found in the library.`);
+
+       }
+    }
+
+    displayBooks(){
+        if (this.books===0){
+            console.log("No books in libra");
+        }
+        console.log("books are : ");
+        this.books.forEach(books=>{console.log(books)});
+    }
 
 }
 
+const myLibrary = new Library();
+myLibrary.addBook("JavaScript");
+myLibrary.addBook("Python");
+myLibrary.addBook("Java");
+myLibrary.displayBooks();
 
-
-
-
+myLibrary.removeBook("Java");
 
 
 
