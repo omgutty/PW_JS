@@ -47,3 +47,28 @@ test('filling the form', async ({page})=>{
 
 
 
+//6. Automate file upload
+test("Automate file upload", async ({page})=>{
+    await page.goto('https://practice.expandtesting.com/upload');
+    await page.setInputFiles('#fileInput','Om_gutty_Resume_17-06-2026.docx');
+    await page.click('#fileSubmit');
+    await page.waitForTimeout(2000);
+
+    
+})
+
+//7. Automate file download
+
+test("Automate file download", async ({page})=>{
+    await page.goto('https://practice.expandtesting.com/download');
+    
+    const downloadpromise= page.waitForEvent('download');
+    //await page.getByText('1782290920969_DNDAgentFile.txt', { exact: true }).click()
+    await page.getByRole('link', { name: '1782290904290_DNDAgentFile.txt' }).click();
+    const download = await downloadpromise;
+    console.log(download.suggestedFilename())
+
+    await page. waitForTimeout(5000);
+    
+})
+
