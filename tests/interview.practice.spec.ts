@@ -72,3 +72,34 @@ test("Automate file download", async ({page})=>{
     
 })
 
+test("ads", async ({page, context})=>{
+    await page.goto('');
+
+    const [newtab]=await Promise.all([
+        await context.waitForEvent('page'),
+        page.click('')
+    ])
+    
+    await newtab.waitForLoadState();
+
+    
+})
+
+
+test('infine scroll',async ({page})=>{
+    let previousHeight = 0;
+
+while (true) {
+    const currentHeight = await page.evaluate(() => document.body.scrollHeight);
+
+    if (currentHeight === previousHeight) {
+        break; // No new content loaded
+    }
+
+    previousHeight = currentHeight;
+
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(1000);
+}
+})
+
